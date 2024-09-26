@@ -2,6 +2,9 @@
 dev:
 	air
 
+build:
+	go build -o bin/service .
+
 docker.chi.build:
 	docker build -t chi .
 
