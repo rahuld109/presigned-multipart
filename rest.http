@@ -1,0 +1,29 @@
+# This REST.http file defines the API endpoints for interacting with the multipart upload service.
+
+@baseUrl = http://localhost:8080
+
+###
+# Initiate a multipart upload.
+GET {{baseUrl}}/initiate?key=my-object-key
+
+###
+# Get a presigned URL for a specific part of the multipart upload.
+GET {{baseUrl}}/presigned?key=my-object-key&uploadId=QkCA4AZbPtOllsOBisZGicV3p0sATbaGa3ujkQE.EsRP6MiodvP0P0p1pDMGgsXa6qwb6zwE.jwBTkQnv4933C72&partNumber=2
+
+###
+# Complete a multipart upload.
+POST {{baseUrl}}/complete?key=my-object-key&uploadId=QkCA4AZbPtOllsOBisZGicV3p0sATbaGa3ujkQE.EsRP6MiodvP0P0p1pDMGgsXa6qwb6zwE.jwBTkQnv4933C72
+Content-Type: application/json
+
+{
+    "parts": [
+        {
+            "partNumber": 1,
+            "etag": "\"d41d8cd98f00b204e9800998ecf8\""
+        },
+        {
+            "partNumber": 2,
+            "etag": "\"d41d8cd98f00b204e9800998ecf\""
+        }
+    ]
+}
