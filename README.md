@@ -1,4 +1,4 @@
-## README for Backend Service
+## Presigned Multipart Go Backend Service
 
 This repository provides a Go backend service for initiating multipart uploads, generating presigned URLs for part uploads, and completing multipart uploads to Amazon S3.
 
